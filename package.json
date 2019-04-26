@@ -1,0 +1,60 @@
+{
+    "name": "atom-ide-hover-datatip",
+    "main": "./lib/main",
+    "version": "0.0.0",
+    "description": "none",
+    "scripts": {
+        "build": "tsc --pretty --project ./",
+        "dev": "tsc --watch --pretty --project ./",
+        "lint": "tslint --project ./",
+        "prepublishOnly": "npm run build",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tonn/atom-ide-hover-datatip"
+    },
+    "homepage": "https://atom.io/packages/atom-ide-hover-datatip",
+    "bugs": {
+        "url": "https://github.com/tonn/atom-ide-hover-datatip/issues"
+    },
+    "license": "MIT",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "@types/atom": "^1.36.1",
+        "@types/node": "^11.13.6",
+        "husky": "^1.3.1",
+        "tslint": "^5.16.0",
+        "typescript": "^3.4.4",
+        "atom-languageclient": "^0.9.9"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint"
+        }
+    },
+    "providedServices": {
+      "datatip": {
+        "versions": {
+          "0.1.0": "ProvideDatatipService"
+        }
+      }
+    },
+    "consumedServices": {
+      "HoverProvidersRegistry": {
+        "versions": {
+          "1.0.0": "ConsumeHoverProvidersRegistry"
+        }
+      },
+      "markdown-renderer": {
+        "versions": {
+          "1.0.0": "ConsumeMarkdownRenderer"
+        }
+      }
+    }
+}
