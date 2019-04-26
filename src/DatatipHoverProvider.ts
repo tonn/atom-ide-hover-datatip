@@ -12,9 +12,7 @@ class DatatipHoverProvider implements HoverProvider {
     this._markdownService = service;
   }
 
-  async Get$(textEditor: TextEditor, position: Point, mouseEvent: MouseEvent): Promise<(HTMLElement | String)[]> {
-    console.log(textEditor, position, mouseEvent);
-
+  async Get$(textEditor: TextEditor, position: Point): Promise<(HTMLElement | String)[]> {
     try {
       if (!this._markdownService) {
         throw Error('atom-ide-markdown-service not found');
@@ -23,7 +21,7 @@ class DatatipHoverProvider implements HoverProvider {
       const provider = DatatipServiceInstance.GetProviderForEditor(textEditor);
 
       if (provider) {
-        const datatip = await provider.datatip(textEditor, position, mouseEvent);
+        const datatip = await provider.datatip(textEditor, position, null);
 
         if (datatip) {
           const grammar = textEditor.getGrammar().name.toLowerCase();
