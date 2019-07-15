@@ -24,6 +24,7 @@
         "atom": ">=1.0.0 <2.0.0"
     },
     "dependencies": {
+        "etch": "^0.14.0"
     },
     "devDependencies": {
         "@types/atom": "^1.36.1",
@@ -39,22 +40,22 @@
         }
     },
     "providedServices": {
-      "datatip": {
-        "versions": {
-          "0.1.0": "ProvideDatatipService"
+        "datatip": {
+            "versions": {
+                "0.1.0": "ProvideDatatipService"
+            }
         }
-      }
     },
     "consumedServices": {
-      "HoverProvidersRegistry": {
-        "versions": {
-          "1.0.0": "ConsumeHoverProvidersRegistry"
+        "HoverProvidersRegistry": {
+            "versions": {
+                "1.0.0": "ConsumeHoverProvidersRegistry"
+            }
+        },
+        "markdown-renderer": {
+            "versions": {
+                "1.0.0": "ConsumeMarkdownRenderer"
+            }
         }
-      },
-      "markdown-renderer": {
-        "versions": {
-          "1.0.0": "ConsumeMarkdownRenderer"
-        }
-      }
     }
 }
